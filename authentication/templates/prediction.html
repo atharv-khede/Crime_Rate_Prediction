@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction</title>
+    <!-- <link href="D:\Atharv\CRP\CrimeRate\authentication\templates\CRA1.jpg" rel="stylesheet"> -->
+    <title>Home Page</title>
+
+  <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .container {
+            background-image: url(https://images.unsplash.com/photo-1589216532372-1c2a367900d9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80);
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 400px;
+            background-size: 1200px 400px;
+            margin: 2px 10px;
+        }
+
+        .heading {
+            padding-top: 80px;
+            align-items: center;
+        }
+
+        h3 {
+            color: white;
+            text-align: center;
+            font-size: 40px;
+            font-weight: 500px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0px 0px 30px 0px;
+
+        }
+
+        .heading form {
+            position: relative;
+            width: 90%;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .form {
+            width: 100%;
+            padding: 6px 12px;
+            font-size: 15px;
+            margin: 0 auto;
+            background-color: rgb(216, 188, 216);
+
+        }
+        
+        h2 {
+            color: rgb(15, 1, 1);
+            text-align: center;
+            font-size: 35px;
+            font-weight: 500px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: -10px 0px 30px 0px;
+
+        }
+        .container2 {
+          margin: 20%;
+          padding: 5%;
+          margin-top: 0;
+         
+              
+        }
+        .box {
+          margin: 5px;
+          padding: 0px;
+        }
+        .submit {
+          margin: 32px;
+          padding: 0px;
+          margin-left: 252px;
+
+        }
+        .st {
+          background-color: #e07474; /* Grey background */
+          border: 2px solid rgb(10, 1, 1); /* Dark grey border */
+          color: #333; /* Black text color */
+          font-size: 1.5em; /* Size of text */
+          padding: 10px 15px; /* Distance between text and border */
+        }
+
+        
+        </style>
+</head>
+
+<body>
+    <div class="body">
+        <div class="container">
+                <div class="heading">
+                    <h3>
+                      Crime Rate Prediction and Analysis
+                    </h3>
+                </div>
+            </div>
+          <div class="container2">
+              <h2 class="Instruct">
+                  Fill the Entries for Prediction
+              </h2>
+              <br>
+            <div class="Entries">
+              <form action="{% url 'prediction' %}" method="post">
+               <div class="box">
+                {% csrf_token %}
+                 <select name="state" id="state" class="form" required>
+                   <option value="" disabled selected>State name</option>
+                  <option value="Andhra Pradesh">Andhra Pradesh</option>
+                  <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                  <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                  <option value="Assam">Assam</option>
+                  <option value="Bihar">Bihar</option>
+                  <option value="Chandigarh">Chandigarh</option>
+                  <option value="Chhattisgarh">Chhattisgarh</option>
+                  <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                  <option value="Daman and Diu">Daman and Diu</option>
+                  <option value="Delhi">Delhi</option>
+                  <option value="Lakshadweep">Lakshadweep</option>
+                  <option value="Puducherry">Puducherry</option>
+                  <option value="Goa">Goa</option>
+                  <option value="Gujarat">Gujarat</option>
+                  <option value="Haryana">Haryana</option>
+                  <option value="Himachal Pradesh">Himachal Pradesh</option>
+                  <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                  <option value="Jharkhand">Jharkhand</option>
+                  <option value="Karnataka">Karnataka</option>
+                  <option value="Kerala">Kerala</option>
+                  <option value="Madhya Pradesh">Madhya Pradesh</option>
+                  <option value="Maharashtra">Maharashtra</option>
+                  <option value="Manipur">Manipur</option>
+                  <option value="Meghalaya">Meghalaya</option>
+                  <option value="Mizoram">Mizoram</option>
+                  <option value="Nagaland">Nagaland</option>
+                  <option value="Odisha">Odisha</option>
+                  <option value="Punjab">Punjab</option>
+                  <option value="Rajasthan">Rajasthan</option>
+                  <option value="Sikkim">Sikkim</option>
+                  <option value="Tamil Nadu">Tamil Nadu</option>
+                  <option value="Telangana">Telangana</option>
+                  <option value="Tripura">Tripura</option>
+                  <option value="Uttar Pradesh">Uttar Pradesh</option>
+                  <option value="Uttarakhand">Uttarakhand</option>
+                  <option value="West Bengal">West Bengal</option>
+                </select>
+                
+              </div>
+              <div class="box">
+                  <input class="form" type="text" placeholder="District" name="district" id="district" required><br>
+              </div>
+               <div class="box">
+                 
+                 <select name="year" id="year" class="form" required>
+                   <option value="" disabled selected>Year</option>
+                   <option value="2001">2001</option>
+                   <option value="2002">2002</option>
+                  <option value="2003">2003</option>
+                  <option value="2004">2004</option>
+                  <option value="2005">2005</option>
+                  <option value="2006">2006</option>
+                  <option value="2007">2007</option>
+                  <option value="2008">2008</option>
+                  <option value="2009">2009</option>
+                  <option value="2010">2010</option>
+                  <option value="2011">2011</option>
+                  <option value="2012">2012</option>
+                  <option value="2013">2013</option>
+                  <option value="2014">2014</option>
+                  <option value="2015">2015</option>
+                  <option value="2016">2016</option>
+                  <option value="2017">2017</option>
+                  <option value="2018">2018</option>
+                  <option value="2019">2019</option>
+                  <option value="2020">2020</option>
+                  <option value="2021">2021</option>
+                  <option value="2022">2022</option>
+                  <option value="2023">2023</option>
+                </select>
+              </div>                
+                <div class="box">
+                  <input class="form" type="number" placeholder="Murder" name="murder" id="murder" required>
+                </div>
+                 <div class="box">
+                     <input class="form" type="number" placeholder="Rape" name="rape" id="rape" required><br>
+                  </div>
+                 <div class="box">
+                     <input class="form" type="number" placeholder="Kidnapping and Abdustion" name="k and a" id="k and a"><br>
+                  </div>
+                 <div class="box">
+                   <input class="form" type="number" placeholder="Dacoity" name="decoity" id="decoity"><br>
+                  </div>
+                <div class="box">
+                   <input class="form" type="number" placeholder="Robbary" name="robbary" id="robbary"><br>
+                </div>
+                <div class="box">
+                  <input class="form" type="number" placeholder="Burglary" name="burglary" id="burglary"><br>
+               </div>
+               <div class="box">
+                <input class="form" type="number" placeholder="Theft" name="theft" id="theft"><br>
+              </div>
+              <div class="box">
+                <input class="form" type="number" placeholder="Dowry Deaths" name="DD" id="DD"><br>
+              </div>
+              <div class="submit">
+                <button type="submit" class="st">Submit</button>
+              </div>
+              </form>
+            </div>
+              
+            </div>
+</body>
+</div>
+
+</html>
