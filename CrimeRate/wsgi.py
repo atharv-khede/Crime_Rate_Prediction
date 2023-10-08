@@ -11,6 +11,10 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'CrimeRate.settings')
+settings_module =  'CrimeRate.deployment' if 'WEBSITE_HOSTNAME' in os.environ else 'CrimeRate.settings' 
+
+
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', settings_module)
 
 application = get_wsgi_application()
