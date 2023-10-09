@@ -33,7 +33,7 @@ jobs:
       - name: Run collectstatic
         run: |
           export DJANGO_SUPERUSER_PASSWORD="yes"
-          python manage.py collectstatic 
+          yes | python manage.py collectstatic 
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
       
