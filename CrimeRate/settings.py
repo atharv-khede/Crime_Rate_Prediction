@@ -120,8 +120,8 @@ USE_TZ = True
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'  
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-STATICFILES_DIRS = (str(BASE_DIR.joinpath('authentication/static')),)
-STATIC_URL = '/authentication/static/'
+STATICFILES_DIRS = (str(BASE_DIR.joinpath('/static')),)
+STATIC_URL = '/static/'
 
 
 # Default primary key field type
