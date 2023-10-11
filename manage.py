@@ -6,7 +6,7 @@ import sys
 
 def main():
     """Run administrative tasks."""
-    settings_module = 'CrimeRate.deployment' if 'WEBSITE_HOSTNAME' in os.environ else 'CriemRate.settings'
+    settings_module = 'CrimeRate.deployment' if 'WEBSITE_HOSTNAME' in os.environ else 'CrimeRate.settings'
 
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', settings_module)
 
